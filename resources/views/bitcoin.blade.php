@@ -1,0 +1,65 @@
+@extends('app.layout')
+@section('title', 'BlockWise - bitcoin')
+@section('content')
+
+    <div class="container-xxl">
+
+        <!-- Details Start -->
+        <div class="container py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="text-center mb-1">
+                <h2 class="mb-1"><img src="{{asset('img/detaits.jpg')}} " width="40 " height="40 " class="me-1">Currency Details</h2>
+                <p class="subtitle-d">to learn and know more about digital currency</p>
+            </div>
+
+            <div class="card-custom-d">
+                <!-- Logo -->
+                <img src="{{asset('img/bit.jpg')}}" class="currency-logo-d" alt="Bitcoin">
+
+                <h2 class="fw-bold text-primary">Bitcoin</h2>
+
+                <!-- About -->
+                <p class="mt-3"><strong class="text-dark">About digital currency:</strong><br> The Bitcoin is the first and most popular cryptocurrency, created in 2009 by an unknown person or group known as Satoshi Nakamoto.
+                </p>
+
+                <!-- Price -->
+                <p class="fw-bold mt-3 text-dark">The price digital currency:</p>
+                <div class="price-box text-dark">
+    ${{ number_format($price, 2) }}
+</div>
+
+                <!-- Video Embed -->
+                <div class="video-box mt-3">
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/SSo_EIwHSd4" title="Bitcoin Video" allowfullscreen>
+          </iframe>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <a href="{{ route('wallet.requests.create') }}" class="btn btn-custom-d mt-3">Add to wallet</a>
+
+            </div>
+        </div>
+    </div>
+   @endsection
+
+
+   <script>
+// async function updatePrice() {
+//     try {
+//         const res = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd');
+//         const data = await res.json();
+//         const price = data.bitcoin.usd;
+//         document.querySelector('.price-box').textContent = `$${price.toLocaleString()}`;
+//     } catch (e) {
+//         console.error('Error fetching price:', e);
+//     }
+// }
+
+// أول تحديث عند تحميل الصفحة
+updatePrice();
+
+// تحديث كل 60 ثانية
+setInterval(updatePrice, 60000);
+</script>
+

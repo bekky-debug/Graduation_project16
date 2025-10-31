@@ -1,0 +1,688 @@
+/********** Template CSS **********/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+:root {
+    --primary: #16D5FF;
+    --secondary: #999999;
+    --light: #F2F8FE;
+    --dark: #111111;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 60px;
+    z-index: 99;
+}
+
+h4,
+h5,
+h6,
+.h4,
+.h5,
+.h6 {
+    font-weight: 500 !important;
+}
+
+
+/* Login, Sign, Forget */
+
+.card-custom {
+    width: 100%;
+    max-width: 1100px;
+    border: none;
+    background: transparent;
+}
+
+.login-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(18, 52, 86, 0.06);
+    padding: 36px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.form-control {
+    border-radius: 18px;
+    padding-left: 56px;
+    height: 58px;
+    border: 2px solid rgba(0, 184, 255, 0.15);
+    box-shadow: none;
+}
+
+.input-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00a7e0;
+    background: transparent;
+    font-size: 18px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 18px;
+}
+
+.remember-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.small-link {
+    color: #00a7e0;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+/* Right image area */
+
+.illustration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+}
+
+.illustration img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.btn-login {
+    width: 100%;
+    height: 64px;
+    border-radius: 14px;
+    background: #2dd2ff;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 0 8px 20px rgba(0, 176, 255, 0.16);
+}
+
+.btn-login:hover {
+    background-color: #0099cc;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .illustration {
+        margin-top: 24px;
+        padding-top: 0;
+    }
+}
+
+.register-panel {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 28px rgba(18, 52, 86, 0.06);
+    padding: 36px;
+}
+
+
+/*** Spinner ***/
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+
+.btn {
+    font-weight: 500;
+    transition: .5s;
+}
+
+.btn.btn-primary {
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: #0099cc;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+
+/*** Navbar ***/
+
+.navbar.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+.navbar .navbar-brand {
+    height: 75px;
+}
+
+.navbar .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: var(--dark);
+    font-weight: 500;
+    outline: none;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+#settingsDropdown :hover {
+    color: var(--primary);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+    .navbar .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+        left: auto !important;
+        right: 0 !important;
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+.navbar .btn:hover {
+    color: #FFFFFF !important;
+    background: var(--primary) !important;
+}
+
+
+/*** Header ***/
+
+.hero-header .breadcrumb-item+.breadcrumb-item::before {
+    color: var(--secondary);
+}
+
+
+/*** Service ***/
+
+.service-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.service-item::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    top: -80px;
+    right: -80px;
+    border: 80px solid;
+    transform: rotate(45deg);
+    opacity: 1;
+    transition: .5s;
+}
+
+.service-item.bg-white::after {
+    border-color: transparent transparent var(--light) transparent;
+}
+
+.service-item.bg-light::after {
+    border-color: transparent transparent #FFFFFF transparent;
+}
+
+.service-item:hover::after {
+    opacity: 0;
+}
+
+
+/*** Roadmap ***/
+
+.currency-card {
+    border: none;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding: 25px;
+}
+
+.currency-card:hover {
+    transform: translateY(-7px);
+}
+
+.currency-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.btn-news {
+    width: 50%;
+}
+
+.btn-read:hover {
+    background-color: #0099cc;
+    color: #fff;
+}
+
+.chart-container {
+    height: 60px;
+}
+
+
+/* أسهم الكاروسل بخلفية دائرية زرقاء */
+
+
+/* أسهم الكاروسل بخلفية دائرية زرقاء */
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #16D5FF;
+    /* الأزرق الأساسي Bootstrap */
+    border-radius: 50%;
+    /* دائرة */
+    padding: 20px;
+    /* تكبير حجم الدائرة */
+    background-size: 60% 60%;
+    /* ضبط حجم السهم داخل الدائرة */
+}
+
+.contact-box {
+    padding: 30px;
+    background: #fff;
+}
+
+.contact-box h2 {
+    color: #16D5FF;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.btn-send {
+    width: 100%;
+}
+
+.btn-send:hover {
+    background-color: #0099cc;
+    color: #fff;
+}
+
+.contact-info h4 {
+    color: #16D5FF;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.contact-info p,
+.contact-info a {
+    margin: 0;
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-icon {
+    color: #16D5FF;
+    margin-right: 10px;
+}
+
+
+/*** FAQs ***/
+
+.faq-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.faq-title {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.faq-text {
+    font-size: 16px;
+    color: #16D5FF;
+    max-width: 500px;
+}
+
+.faq-img {
+   width: 60%;
+    height: 60%;
+}
+
+
+/* تغيير ألوان الرسمة الافتراضية */
+
+.faq-img-container {
+    position: relative;
+}
+
+.faq-img-container::after {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background: skyblue;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.accordion .accordion-item {
+    border: none;
+    margin-bottom: 15px;
+}
+
+.accordion .accordion-button {
+    background: var(--light);
+    border-radius: 2px;
+}
+
+.accordion .accordion-button:not(.collapsed) {
+    color: #FFFFFF;
+    background: var(--primary);
+    box-shadow: none;
+}
+
+.accordion .accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion .accordion-body {
+    padding: 15px 0 0 0;
+}
+
+.wallet-box {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 0 8px #00C9FF;
+    display: block;
+    margin: auto;
+}
+
+.balance-item {
+    font-size: 18px;
+    margin-bottom: 15px;
+    line-height: 40px;
+    color: #686b6d;
+    margin-left: 20px;
+}
+
+.balance-item .span1 {
+    margin-left: 150px;
+    padding-right: 25px;
+}
+
+.send-btn:hover {
+    background-color: #0099cc;
+}
+
+hr {
+    width: 50%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    opacity: 0.2px;
+    margin-bottom: 20px;
+}
+
+i:hover {
+    color: #2b7083;
+}
+
+.exchange-box {
+    max-width: 700px;
+    width: 100%;
+    margin: 80px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00C9FF;
+    padding: 30px;
+}
+
+.exchange-btn {
+    background-color: #00C9FF;
+    border: none;
+}
+
+.exchange-btn:hover {
+    background-color: #0099cc;
+}
+
+.rate-text {
+    font-size: 0.95rem;
+    color: #6c757d;
+}
+
+.card-custom-d {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00C9FF;
+    padding: 30px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.currency-logo-d {
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+}
+
+.price-box {
+    background: linear-gradient(to top, #e6f4ff, #fff);
+    border-radius: 10px;
+    padding: 15px;
+    font-weight: bold;
+    margin: 20px auto;
+    width: 200px;
+}
+
+.video-box iframe {
+    border-radius: 10px;
+}
+
+.btn-custom-d {
+    background-color: #00bfff;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-custom-d:hover {
+    background-color: #0099cc;
+    color: #fff;
+}
+
+.subtitle-d {
+    color: #00aaff;
+    font-size: 14px;
+}
+
+.profile-card {
+    max-width: 700px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 8px #00C9FF;
+    padding: 30px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.profile-card h3 {
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.profile-card .form-control {
+    border-radius: 12px;
+    padding-left: 40px;
+    font-size: 0.95rem;
+}
+
+.profile-card .form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.profile-card .form-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00bfff;
+    font-size: 18px;
+}
+
+.profile-card .btn-custom {
+    background-color: #00bfff;
+    color: #fff;
+    width: 50%;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+}
+
+.profile-card .btn-custom:hover {
+    background: #0099cc;
+    color: #fff;
+}
+
+
+/*** Footer ***/
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: var(--secondary);
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--secondary);
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    color: var(--primary);
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .btn.btn-square {
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.footer .btn.btn-square:hover {
+    color: #FFFFFF;
+    background: var(--primary);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    border-top: 1px solid rgba(17, 17, 17, .1);
+}
+
+.footer .copyright a {
+    color: var(--primary);
+}
+
+.footer .copyright a:hover {
+    color: var(--dark);
+}
