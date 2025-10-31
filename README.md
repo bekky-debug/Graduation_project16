@@ -12,7 +12,6 @@ A Laravel + Vue.js cryptocurrency wallet system for managing balances, top-up re
 - Laravel 10
 - Vue.js 3
 - MySQL
-- CoinGecko API
 
 ## 📦 Setup
 ```bash
